@@ -1,38 +1,115 @@
-.App {
-  text-align: center;
+/* General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  background-color: #111;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.app-container {
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Title styling */
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Leaderboard top 3 influencers */
+.leaderboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+/* Card styles for ranking */
+.leaderboard-card {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Different sizes for 1st, 2nd, 3rd */
+.rank-1 {
+  font-size: 1.8rem;
+  width: 220px;
+  height: 220px;
+  border: 3px solid gold;
+}
+
+.rank-2 {
+  font-size: 1.5rem;
+  width: 180px;
+  height: 180px;
+  border: 3px solid silver;
+}
+
+.rank-3 {
+  font-size: 1.2rem;
+  width: 160px;
+  height: 160px;
+  border: 3px solid #cd7f32; /* Bronze color */
+}
+
+/* Remaining influencers in rows */
+.influencers-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 0 10px;
+  justify-content: center;
+}
+
+/* Individual influencer card */
+.influencer-card {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  border: 1px solid gray;
+}
+
+.influencer-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.influencer-card p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .leaderboard-container {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .rank-1, .rank-2, .rank-3 {
+    width: 180px;
+    height: 180px;
+  }
+
+  .influencers-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }
+
