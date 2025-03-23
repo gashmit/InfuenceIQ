@@ -13,9 +13,6 @@ function App() {
 
   return (
     <div className="bg-gray-900 min-h-screen text-white p-10">
-      {/* Title */}
-      <h1 className="text-4xl font-bold text-left mb-8">InfluenceIQ</h1>
-
       {/* Leaderboard */}
       <Leaderboard influencers={influencers} />
 
@@ -37,5 +34,3 @@ function App() {
 }
 
 export default App;
-
-
